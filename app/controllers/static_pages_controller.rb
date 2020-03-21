@@ -3,7 +3,7 @@ class StaticPagesController < ApplicationController
   def index
       @pikachu = get_pokemon('pikachu')
       @abilities = @pikachu.abilities
-      @image = @pokemon.sprites.front_default
+      @image = @pikachu.sprites.front_default
     end
 
     def get_pokemon(pokemon)

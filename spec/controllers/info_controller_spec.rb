@@ -1,12 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe InfoController, type: :controller do
-  describe "static_pages#index action" do
-    it "should successfully show the page" do
-      get :index
-      expect(response).to have_http_status(:success)
-    end
-  end
 
   describe "info#new action" do
     it "should successfully show the new form" do
@@ -27,6 +21,7 @@ RSpec.describe InfoController, type: :controller do
     it "should properly deal with validation errors" do
       post :create, params: { info: { message: ''} }
       expect(response).to have_http_status(:unprocessable_entity)
-      expect(Gram.count).to eq 0
+      expect(Info.count).to eq 0
+    end
   end
 end

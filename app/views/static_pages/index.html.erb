@@ -3,7 +3,7 @@
   <h2><%= @pikachu.name.capitalize %>, I choose you!!!</h2>
   <h2>Abilities:</h2>
   <% @abilities.each do |ability| %>
-    <h3><%= ability.ability.name %></h3>
+    <h3 class="abilities"><%= ability.ability.name %></h3>
   </div>
   <% end %>
-    <h4><%= image_tag @sprites.back_default %></h4>
+    <h4><%= image_tag @image %></h4>
