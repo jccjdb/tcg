@@ -1,5 +1,6 @@
-class InfoController < ApplicationController
+class InfosController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
+
   def new
     @info = Info.new
   end
@@ -7,8 +8,9 @@ class InfoController < ApplicationController
   def index
   end
 
+
   def create
-    @info = current_user.info.create(info_params)
+    @info = current_user.infos.create(info_params)
     if @info.valid?
       redirect_to root_path
     else
@@ -23,3 +25,4 @@ class InfoController < ApplicationController
 
   end
 end
+

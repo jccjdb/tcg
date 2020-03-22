@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe InfoController, type: :controller do
+RSpec.describe InfosController, type: :controller do
 
   describe "info#new action" do
     it "should require users to be logged in" do
@@ -25,7 +25,7 @@ RSpec.describe InfoController, type: :controller do
   describe "info#create action" do
 
     it "should require users to be logged in" do
-      post :create, params: { gram: { message: "Hello" } }
+      post :create, params: { gram: { message: "First gen" } }
       expect(response).to redirect_to new_user_session_path
   end
 
@@ -60,3 +60,4 @@ RSpec.describe InfoController, type: :controller do
     end
   end
 end
+
