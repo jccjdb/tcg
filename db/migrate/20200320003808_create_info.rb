@@ -1,4 +1,4 @@
-class CreateInfos < ActiveRecord::Migration[5.2]
+class CreateInfo < ActiveRecord::Migration[5.2]
   def change
     create_table :info do |t|
       t.text :message
