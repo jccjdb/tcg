@@ -3,10 +3,11 @@ require 'rails_helper'
 RSpec.describe InfosController, type: :controller do
 
   describe "infos#new action" do
-    it "should require users to be logged in" do
-      get :new
+
+  it "should require users to be logged in" do
+    post :create, params: { gram: { message: "First gen" } }
     expect(response).to redirect_to new_user_session_path
-    end
+  end
 
 
     it "should successfully show the new form" do
@@ -51,6 +52,7 @@ RSpec.describe InfosController, type: :controller do
         password:              'secretPassword',
         password_confirmation: 'secretPassword'
       )
+      sign_in user
                            
       info_count = Info.count
       post :create, params: { info: { message: ''} }

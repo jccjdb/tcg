@@ -23,12 +23,12 @@ ActiveRecord::Schema.define(version: 2020_03_22_004504) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "info", force: :cascade do |t|
+  create_table "infos", force: :cascade do |t|
     t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.index ["user_id"], name: "index_info_on_user_id"
+    t.index ["user_id"], name: "index_infos_on_user_id"
   end
 
   create_table "pokemons", force: :cascade do |t|
